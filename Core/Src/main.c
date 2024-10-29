@@ -132,6 +132,7 @@ void process(void) {
 		set_battery_charging(0);
 		set_battery_power(voltage >= LOW_BATTERY ? 1 : 0);
 	} else {
+		set_battery_power(0);
 		if ((state & STATE_CHARGING) == 0) {
 			if (voltage < CHRG_START) {
 				set_battery_charging(1);
